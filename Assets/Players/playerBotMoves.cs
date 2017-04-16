@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerTopMoves : MonoBehaviour {
+public class playerBotMoves : MonoBehaviour {
 	private bool m_isJumping;
 	private Rigidbody2D m_physic;
 
@@ -16,28 +16,28 @@ public class playerTopMoves : MonoBehaviour {
 		m_physic = gameObject.GetComponent<Rigidbody2D> ();
 		m_direction = 0;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Space) && !m_isJumping)
+		if(Input.GetKeyDown(KeyCode.Keypad0) && !m_isJumping)
 		{
 			//m_isJumping = true;
 			//Da joumpe!!!
-			m_physic.AddForce(Vector2.up * laPouissance);
-			Debug.Log ("jumpkey");
+			m_physic.AddForce(Vector2.down * laPouissance);
+			Debug.Log ("jumpkey2");
 		}
 
 		//directions !!!!
-		if (Input.GetKeyDown (KeyCode.D)) {
+		if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			m_direction++;
 		}
-		if (Input.GetKeyDown (KeyCode.Q)) {
+		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
 			m_direction--;
 		}
-		if (Input.GetKeyUp (KeyCode.D)) {
+		if (Input.GetKeyUp (KeyCode.RightArrow)) {
 			m_direction--;
 		}
-		if (Input.GetKeyUp (KeyCode.Q)) {
+		if (Input.GetKeyUp (KeyCode.LeftArrow)) {
 			m_direction++;
 		}
 

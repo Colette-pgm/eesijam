@@ -11,7 +11,7 @@ public class InvertedGravity : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		m_rb.AddForce (Vector2.up * gravityScale);
 	}
 }
