@@ -11,7 +11,7 @@ public class NormalGravity : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		m_rb.AddForce (Vector2.down * gravityScale);
 	}
 }
