@@ -9,6 +9,7 @@ public class playerTopMoves : MonoBehaviour {
 	public float laPouissance;
 	public float DaSpeed;
 	public float pasPlusViteQue;
+	public GameObject botPlayer;
 	private int m_direction;
 	// Use this for initialization
 	void Start () {
@@ -45,19 +46,22 @@ public class playerTopMoves : MonoBehaviour {
 	}
 	void FixedUpdate(){
 		if (Mathf.Abs (m_physic.velocity.x) < pasPlusViteQue) {
-			m_physic.AddForce (Vector2.right * DaSpeed * m_direction);
+			//float dist = gameObject.GetComponent<Transform> ().position.x - botPlayer.GetComponent<Transform> ().position.x;
+			//if (!(Mathf.Abs(dist)>1000 && dist * m_direction > 0F)) {
+				m_physic.AddForce (Vector2.right * DaSpeed * m_direction);
+			//}
 		}
 		//Debug.Log (m_direction);
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		if(coll.gameObject.tag == "ground" ){
+		if(coll.gameObject.tag == "Ground" ){
 			m_isJumping = false;
 			Debug.Log ("s'eclate par terre");
 		}
 	}
 	void OnCollisionExit2D(Collision2D coll){
-		if(coll.gameObject.tag == "ground" ){
+		if(coll.gameObject.tag == "Ground" ){
 			m_isJumping = true;
 			Debug.Log ("jump");
 		}
