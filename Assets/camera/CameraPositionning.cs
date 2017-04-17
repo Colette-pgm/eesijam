@@ -23,6 +23,6 @@ public class CameraPositionning : MonoBehaviour {
 		Vector2 pos12 = new Vector2(pos1.x,pos1.y);
 		Vector2 pos22 = new Vector2(pos2.x,pos2.y);
 		Vector2 tmp = (pos12 + pos22) / 2F;
-		m_transform.position = new Vector3(tmp.x,tmp.y,-10F);
+		m_transform.position = new Vector3(tmp.x,0F,-10F);
 	}
 }
