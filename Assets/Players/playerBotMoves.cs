@@ -51,13 +51,13 @@ public class playerBotMoves : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		if(coll.gameObject.tag == "ground" ){
+		if(coll.gameObject.tag == "Ground" ){
 			m_isJumping = false;
 			Debug.Log ("s'eclate par terre");
 		}
 	}
 	void OnCollisionExit2D(Collision2D coll){
-		if(coll.gameObject.tag == "ground" ){
+		if(coll.gameObject.tag == "Ground" ){
 			m_isJumping = true;
 			Debug.Log ("jump");
 		}
